@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = inicio;
+        function inicio()
+        {
+            let enviar = document.getElementById('enviar');
+            enviar.addEventListener('click', converter);
+        }
+
+        function converter()
+        {
+            let valor = document.getElementById('valor_reais');
+            let saida = document.getElementById('saida');
+            let valor_reais = parseFloat(valor.value);
+
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function()
+            {
+                saida.innerHTML = this.responseText; 
+            }   
+            xhttp.open("GET", `converte.php?valor_reais=${valor_reais}`, true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="valor_reais">
+    <br>
+    <button id="enviar">Enviar</button>
+    <br>
+    <div id="saida"></div>
+</body>
+</html>
