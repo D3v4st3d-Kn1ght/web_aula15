@@ -1,3 +1,3 @@
-(Exercício 1)[exercicio1.html]
+[exercicio1.html](Exercício 1)
 
-(Exercício 2)[exercicio2.html]
+[exercicio2.html](Exercício 2)
